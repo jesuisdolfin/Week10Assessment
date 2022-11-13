@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert New Computer</title>
+</head>
+<body>
+<form th:object="${newComputer}" th:action="@{/update/{id}(id=${newComputer.id})}" method=POST>
+Type: <input name="type" size="20" th:field="*{type}"> <br/>
+Brand: <input name="brand" size="20" th:field="*{brand}"> <br/>
+Monitors: <input name="monitors" size="20" th:field="*{monitors}"> <br/>
+RAM: <input name="specs.ram" size="20" th:field="*{specs.ram}"> <br/>
+GPU: <input name="specs.gpu" size="20" th:field="*{specs.gpu}"> <br/>
+CPU: <input name="specs.cpu" size="20" th:field="*{specs.cpu}"> <br/>
+<input name="submit" type="submit" value="submit"/>
+</form>
+<a href="viewAll">View all Computers</a>
+
+</body>
+</html>
